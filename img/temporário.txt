@@ -1,0 +1,2 @@
+Esse arquivo existe apenas para subir a pasta 'img' para o git, que não aceita pastas vazias.
+Você pode excluí-lo após baixar o repositório.
