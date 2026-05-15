@@ -21,3 +21,13 @@ def sequencial(quantidade_downloads):
 
     tempo_medio = sum(tempos) / len(tempos)
     print(f"{metodo} | {cpus} | {quantidade_downloads} | Tempo médio: {tempo_medio:.2f}s")
+    
+if __name__ == "__main__":
+    try:
+        downloads = int(input("Quantidade de downloads (100, 500 ou 1000): "))
+        if downloads in [100, 500, 1000]:
+            sequencial(downloads)
+        else:
+                print("Valor inválido para Downloads.")
+    except ValueError:
+        print("Insira um número válido.")
