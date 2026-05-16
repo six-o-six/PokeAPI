@@ -25,3 +25,14 @@ def concorrencia(n_cpus, quantidade_downloads):
 
     tempo_medio = sum(tempos) / len(tempos)
     print(f"{metodo} | {n_cpus} | {quantidade_downloads} | Tempo médio: {tempo_medio:.2f}s")
+    
+if __name__ == "__main__":
+    try:
+        cpus = int(input("Quantidade de CPUs (2, 4 ou 8): "))
+        downloads = int(input("Quantidade de downloads (100, 500 ou 1000): "))
+        if cpus in [2, 4, 8] and downloads in [100, 500, 1000]:
+            concorrencia(cpus, downloads)
+        else:
+            print("Valores inválidos para CPU ou Downloads.")
+    except ValueError:
+        print("Insira números válidos.")
