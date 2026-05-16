@@ -31,4 +31,6 @@ def main():
         print("Opção inválida.")
 
 if __name__ == "__main__":
-    main() 
+    while True:
+        main()
+        input("\nPressione Enter para voltar ao menu.")
