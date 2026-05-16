@@ -24,4 +24,4 @@ def sequencial(quantidade_downloads):
     print(f"{metodo} | {cpus} | {quantidade_downloads} | Tempo médio: {tempo_medio:.2f}s")
     
 if __name__ == "__main__":
-    executar_interativo(sequencial)
+    executar_interativo(sequencial, loop_continuo=True)

@@ -26,4 +26,4 @@ def multiprocessos(n_cpus, quantidade_downloads):
     print(f"{metodo} | {n_cpus} | {quantidade_downloads} | Tempo médio: {tempo_medio:.2f}s")
     
 if __name__ == "__main__":
-    executar_interativo(multiprocessos)
+    executar_interativo(multiprocessos, loop_continuo=True)

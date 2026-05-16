@@ -30,4 +30,4 @@ def threads_executor(n_threads, quantidade_downloads):
     print(f"{metodo} | {n_threads} | {quantidade_downloads} | Tempo médio: {tempo_medio:.2f}s")
     
 if __name__ == "__main__":
-    executar_interativo(threads_executor)
+    executar_interativo(threads_executor, loop_continuo=True)
