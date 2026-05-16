@@ -1,6 +1,7 @@
 import time
 from download_img import baixar_imagem_pokemon
 from apagar_download import limpar_imagens
+from interface_metodos import executar_interativo
 
 def sequencial(quantidade_downloads):
     tempos = []
@@ -23,11 +24,4 @@ def sequencial(quantidade_downloads):
     print(f"{metodo} | {cpus} | {quantidade_downloads} | Tempo médio: {tempo_medio:.2f}s")
     
 if __name__ == "__main__":
-    try:
-        downloads = int(input("Quantidade de downloads (100, 500 ou 1000): "))
-        if downloads in [100, 500, 1000]:
-            sequencial(downloads)
-        else:
-                print("Valor inválido para Downloads.")
-    except ValueError:
-        print("Insira um número válido.")
+    executar_interativo(sequencial)
