@@ -25,6 +25,7 @@ def concorrencia(n_cpus, quantidade_downloads):
 
         tempo_medio = sum(tempos) / len(tempos)
         print(f"{metodo} | {n_cpus} | {quantidade_downloads} | Tempo médio: {tempo_medio:.2f}s")
+        return (metodo, n_cpus, quantidade_downloads, tempos, tempo_medio)
 
     except KeyboardInterrupt:
         print("\nExecução interrompida. Apagando imagens baixadas...")

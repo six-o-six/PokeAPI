@@ -23,6 +23,7 @@ def sequencial(quantidade_downloads):
 
         tempo_medio = sum(tempos) / len(tempos)
         print(f"{metodo} | {cpus} | {quantidade_downloads} | Tempo médio: {tempo_medio:.2f}s")
+        return (metodo, cpus, quantidade_downloads, tempos, tempo_medio)
 
     except KeyboardInterrupt:
         print("\nExecução interrompida. Apagando imagens baixadas...")
