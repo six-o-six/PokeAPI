@@ -14,8 +14,7 @@ def baixar_imagem_pokemon(id_pokemon):
     pasta_destino = 'img'
     url_api = f"https://pokeapi.co/api/v2/pokemon/{id_pokemon}"
 
-    if not os.path.exists(pasta_destino):
-        os.makedirs(pasta_destino)
+    os.makedirs(pasta_destino, exist_ok=True)
 
     try:
         session = _get_session()
