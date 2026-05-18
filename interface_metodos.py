@@ -12,10 +12,9 @@ def salvar_csv(metodo, n_cpus, quantidade_downloads, tempos, tempo_medio):
         writer = csv.DictWriter(f, fieldnames=cabecalho)
         if novo:
             writer.writeheader()
-        ts = datetime.now().isoformat()
         for i, t in enumerate(tempos, start=1):
             writer.writerow({
-                "timestamp": ts,
+                "timestamp": datetime.now().isoformat(),
                 "metodo": metodo,
                 "cpus": n_cpus,
                 "downloads": quantidade_downloads,
