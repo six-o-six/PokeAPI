@@ -24,11 +24,11 @@ def salvar_csv(metodo, n_cpus, quantidade_downloads, tempos, tempo_medio):
             })
 
 def executar_interativo(func_execucao, loop_continuo=False):
+    sig = inspect.signature(func_execucao)
+    params = sig.parameters
+    
     while True:
         try:
-            sig = inspect.signature(func_execucao)
-            params = sig.parameters
-
             if len(params) == 1:
                 downloads = int(input("Quantidade de downloads (100, 500 ou 1000): "))
                 if downloads in [100, 500, 1000]:
