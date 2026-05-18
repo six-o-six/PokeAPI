@@ -9,7 +9,7 @@ def carregar_dados() -> pd.DataFrame:
             f"Arquivo '{CSV_PATH}' não encontrado. "
             "Execute o projeto primeiro para gerar os dados."
         )
-    df = pd.read_csv(CSV_PATH, parse_dates=["timestamp"])
+    df = pd.read_csv(CSV_PATH, parse_dates=["timestamp"], encoding="latin1")
     df["cpus"]      = df["cpus"].astype(int)
     df["downloads"] = df["downloads"].astype(int)
     df["iteracao"]  = df["iteracao"].astype(int)
