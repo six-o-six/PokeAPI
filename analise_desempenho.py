@@ -63,6 +63,11 @@ def speedup_vs_sequencial(df: pd.DataFrame) -> pd.DataFrame:
         resumo[resumo["metodo"] == "Sequencial"][["downloads", "media"]]
         .rename(columns={"media": "tempo_sequencial"})
     )
+    
+    if baseline.empty:
+        print("Aviso: nenhum dado do método Sequencial encontrado no CSV. "
+              "\nExecute ao menos uma rodada sequencial para calcular o speedup.")
+        return pd.DataFrame({"Status": ["Aguardando execução do método Sequencial para calcular Speedup."]})
 
     merged = resumo.merge(baseline, on="downloads", how="left")
     merged["speedup"] = (merged["tempo_sequencial"] / merged["media"]).round(4)
